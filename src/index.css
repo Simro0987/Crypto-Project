@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base text-neutral-200 font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Shared "Premium Dark Mode" card surface. */
+  .card-surface {
+    @apply bg-card border border-neutral-800 rounded-2xl shadow-card;
+  }
+}
+
+/* Subtle, dark-friendly scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+  border: 2px solid #0a0a0a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
