@@ -1,0 +1,130 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: dark;
+  color: #e9eef5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: radial-gradient(circle at top, #1b2130 0%, #0b0e16 60%);
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.screen--center {
+  justify-content: center;
+}
+
+/* Loading state */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #4f9dff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.loader__text {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #9aa6bd;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard */
+.dashboard {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dashboard__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  justify-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 280px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 157, 255, 0.5);
+}
+
+.card__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.card__symbol {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4f9dff;
+}
+
+.card__name {
+  font-size: 0.95rem;
+  color: #9aa6bd;
+}
+
+.card__price {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
